@@ -13,9 +13,9 @@ class LogStash::Outputs::Azureblob < LogStash::Outputs::Base
   # This configuration set the access key of the storage account.
   config :storage_access_key, :validate => :string, :default => nil
   # This configuration controls which container the message uploaded to.
-  config :@azure_container, :validate => :string, :default => nil
+  config :azure_container, :validate => :string, :default => nil
   # This configuration controls whether create container if it doesn't exists.
-  config :auto_create_container, :bool, :default => true
+  config :auto_create_container, :validate => :boolean, :default => true
 
   public
   def register
